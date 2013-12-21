@@ -6,7 +6,7 @@ For most up-to-date results please look at my <a href="http://scholar.google.ca/
 
 ### Conferences, Workshops
 
-* Multi-prediction deep Boltzmann machines, Ian J. Goodfellow, Mehdi Mirza, Aaron Courville, and Yoshua Bengio, NIPS 2013 <a href"http://media.nips.cc/nipsbooks/nipspapers/paper_files/nips26/349.pdf">pdf</a>
+* Multi-prediction deep Boltzmann machines, Ian J. Goodfellow, Mehdi Mirza, Aaron Courville, and Yoshua Bengio, NIPS 2013 <a href="http://media.nips.cc/nipsbooks/nipspapers/paper_files/nips26/349.pdf">pdf</a>
 <a href="http://www-etud.iro.umontreal.ca/~goodfeli/mp_dbm.html">Code</a>
 * Pylearn2: a machine learning research library. Ian J Goodfellow, David Warde-Farley, Pascal Lamblin, Vincent Dumoulin, Mehdi Mirza, Razvan Pascanu, James Bergstra, Frédéric Bastien, Yoshua Bengio. arXiv:1308.4214 <a href="http://arxiv.org/pdf/1308.4214v1">pdf></a>
 * Challenges in Representation Learning: A report on three machine learning contests. Ian J Goodfellow, Dumitru Erhan, Pierre Luc Carrier, Aaron Courville, Mehdi Mirza, Ben Hamner, Will Cukierski, Yichuan Tang, David Thaler, Dong-Hyun Lee, Yingbo Zhou, Chetan Ramaiah, Fangxiang Feng, Ruifan Li, Xiaojie Wang, Dimitris Athanasakis, John Shawe-Taylor, Maxim Milakov, John Park, Radu Ionescu, Marius Popescu, Cristian Grozea, James Bergstra, Jingjing Xie, Lukasz Romaszko, Bing Xu, Zhang Chuang, Yoshua Bengio, International Conference On Neural Information Processing, 2013 <a href="http://arxiv.org/pdf/1307.0414v1">pdf</a>
