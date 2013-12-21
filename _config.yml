@@ -3,7 +3,7 @@ tagline:          Machine Learning
 description:      My personal home
 #Comment out url when working locally to resolve base urls correctly
 #url: http://0.0.0.0:4000
-#url: memimo.net
+url: http://memimo.net
 
 # Owner/author information
 owner:
