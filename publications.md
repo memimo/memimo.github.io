@@ -1,6 +1,6 @@
 ---
 layout: home2
-permalink: /publications/index.html
+permalink: publications/index.html
 ---
 ### Conferences, Workshops
 

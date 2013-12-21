@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /bio/index.html
+permalink: bio/index.html
 tags: [about, PhD, ML]
 image:
   feature: soft-trees.jpg

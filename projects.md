@@ -1,7 +1,7 @@
 ---
 layout: home2
 tags: [about, PhD, ML]
-permalink: /projects/index.html
+permalink: projects/index.html
 image:
   feature: random_grey_variations.png
 ---
