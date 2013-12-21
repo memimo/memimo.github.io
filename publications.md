@@ -2,7 +2,7 @@
 layout: home2
 permalink: publications/index.html
 ---
-For most up-to-date results pelase look at my <a href="http://scholar.google.ca/citations?hl=en&user=c646VbAAAAAJ">google scholar page</a>
+For most up-to-date results please look at my <a href="http://scholar.google.ca/citations?hl=en&user=c646VbAAAAAJ">google scholar page</a>
 
 ### Conferences, Workshops
 
