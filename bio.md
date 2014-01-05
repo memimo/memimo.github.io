@@ -3,7 +3,7 @@ layout: home2
 permalink: bio/index.html
 tags: [about, PhD, ML]
 image:
-  feature: soft-trees.jpg
+  feature: sailboat.jpg
 ---
 
 I am currently a third year PhD student in LISA lab under supervision of Yoshua Bengio.
