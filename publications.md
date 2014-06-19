@@ -10,7 +10,7 @@ For most up-to-date results please look at my <a href="http://scholar.google.ca/
 
 * Generative Adversarial Networks, Ian J Goodfellow, Jean Pouget­Abadie, Mehdi Mirza, Bing Xu, 
 David Warde­Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio, arXiv preprint arXiv:1406.2661 
-<a href="http://arxiv.org/pdf/1406.2661v1">pdf</a>
+<a href="http://arxiv.org/pdf/1406.2661v1">pdf</a>, <a href="https://github.com/goodfeli/adversarial">Code</a>
 * An Empirical Investigation of Catastrophic Forgeting in Gradient-Based Neural Networks, IJ Goodfellow, M Mirza, X Da, A Courville, Y Bengio, arXiv preprint arXiv:1312.6211 <a href="http://arxiv.org/pdf/1312.6211v1">pdf</a>, <a href="https://github.com/goodfeli/forgetting">Code</a>
 * Combining modality specific deep neural networks for emotion recognition in video, <small>Samira Ebrahimi Kanou, Christopher Pal, Xavier Bouthillier, Pierre Froumenty, Çaglar Gülçehre, Roland Memisevic, Pascal Vincent, Aaron Courville, Yoshua Bengio, Raul Chandias Ferrari, Mehdi Mirza, Sébastien Jean, Pierre-Luc Carrier, Yann Dauphin, Nicolas Boulanger-Lewandowski, Abhishek Aggarwal, Jeremie Zumer, Pascal Lamblin, Jean-Philippe Raymond, Guillaume Desjardins, Razvan Pascanu, David Warde-Farley, Atousa Torabi, Arjun Sharma, Emmanuel Bengio, Kishore Reddy Konda, Zhenzhou Wu</small>, ICMI 2013 <a href="http://www.professeurs.polymtl.ca/christopher.pal/icmi2013/icmi2013_grand_challenge_winner.pdf">pdf</a>
 * Multi-prediction deep Boltzmann machines, Ian J. Goodfellow, Mehdi Mirza, Aaron Courville, and Yoshua Bengio, NIPS 2013 <a href="http://media.nips.cc/nipsbooks/nipspapers/paper_files/nips26/349.pdf">pdf</a>, <a href="http://www-etud.iro.umontreal.ca/~goodfeli/mp_dbm.html">Code</a>
