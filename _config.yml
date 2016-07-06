@@ -1,57 +1,14 @@
-title:            Mehdi Mirza
-tagline:          Machine Learning
-description:      My personal home
-#Comment out url when working locally to resolve base urls correctly
-#url: http://0.0.0.0:4000
-url: http://memimo.net
+url: http://kirbyt.github.io
+baseurl: /timeline-jekyll-theme
 
-# Owner/author information
-owner:
-  name:           Medi Mirza
-  avatar:         avatar.png
-  bio:            "Machine learning researcher"
-  email:          mirzamom at iro.umontreal.ca
-  twitter:        memimo        
-  github:         memimo       
-  instagram:      memimo     
-  gplus:          MehdiMirza
-  
+# Site Settings
+title: Timeline
+description: "Timeline is multipurpose, single page Jekyll theme that includes a timeline section."
+keywords: "jekyll, theme"
+google-tracking-id:
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Bio
-    url: /bio
-  - title: CV
-    url: http://www-etud.iro.umontreal.ca/~mirzamom/cv.pdf
-    external: true
-  - title: Publications
-    url: /publications
-  - title: Projects
-    url: /projects
+# Career Settings
+# Default career thumbnail image.
+career-img: "img/timeline/default.jpg"
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-pygments:    true
-markdown:    kramdown
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp"]
+exclude: ["Rakefile", "LICENSE", "readme.markdown"]
