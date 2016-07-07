@@ -4,6 +4,5 @@ title: January 2011 - August 2011
 subtitle:
 image: "img/timeline/matterhorn.jpg"
 ---
-Research internship
-idiap research institute
-Martginy, Switzerland 
+Research internship\\
+idiap Research Institute, Switzerland

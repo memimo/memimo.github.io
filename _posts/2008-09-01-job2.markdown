@@ -4,5 +4,5 @@ title: September 2008 - September 2009
 subtitle:
 image: "img/timeline/barcelona.jpg"
 ---
-MSc in artificial intelligence
-Barcelona
+M.Sc. in Artificial Intelligence\\
+Universitat Politècnica de Catalunya
