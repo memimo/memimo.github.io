@@ -1,7 +1,7 @@
 ---
 layout: null
 title: September 2001 - May 2009
-subtitle: 
-image: "img/timeline/1.jpg"
+subtitle:
+image: "img/timeline/damavand.jpg"
 ---
 BSc in Physics at Sharif University of Technology
