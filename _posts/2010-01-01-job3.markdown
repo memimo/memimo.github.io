@@ -1,0 +1,7 @@
+---
+layout: null
+title: January 2010 - December 2010
+subtitle:
+image: "img/timeline/boston.jpg"
+---
+Visiting student in Jim DiCarlo's lab at MIT
