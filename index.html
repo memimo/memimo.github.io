@@ -1,5 +1,405 @@
----
-layout: default
-title: 
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehdi Mirza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        oklch(98.5% 0.005 80);
+      --ink:       oklch(14% 0.012 255);
+      --ink-mid:   oklch(42% 0.010 255);
+      --ink-light: oklch(62% 0.008 255);
+      --accent:    oklch(38% 0.09 255);
+      --accent-h:  oklch(32% 0.11 255);
+      --rule:      oklch(88% 0.006 255);
+
+      --font-sans: "DM Sans", Helvetica, Arial, sans-serif;
+      --font-mono: "DM Mono", "Courier New", monospace;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding: 80px 24px 120px;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 52px;
+    }
+
+    .name {
+      font-size: clamp(2rem, 5vw, 2.6rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .position {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      margin-bottom: 28px;
+    }
+
+    .bio {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--ink);
+      max-width: 560px;
+      text-wrap: pretty;
+      margin-bottom: 28px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 0.875rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      transition: color 0.15s ease;
+    }
+    .links a:hover { color: var(--accent-h); text-decoration: underline; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 36px;
+    }
+
+    /* ── Publication year group ── */
+    .year-group {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 28px;
+      margin-bottom: 0;
+    }
+
+    .year-group + .year-group {
+      margin-top: 32px;
+    }
+
+    .year-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      padding-top: 3px;
+      line-height: 1.5;
+      grid-row: 1;
+    }
+
+    .year-pubs {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ── Single publication ── */
+    .pub {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .pub-title {
+      font-size: 0.93rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .pub-title a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .pub-authors strong {
+      color: var(--ink-mid);
+      font-weight: 400;
+    }
+
+    .pub-venue {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Divider between year groups ── */
+    .pubs-divider {
+      height: 1px;
+      background: var(--rule);
+      margin: 36px 0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      font-family: var(--font-mono);
+      font-weight: 300;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 48px 20px 80px; }
+      .year-group {
+        grid-template-columns: 1fr;
+        gap: 8px 0;
+      }
+      .year-label { font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- ── Header / Bio ── -->
+    <header class="header">
+      <h1 class="name">Mehdi Mirza</h1>
+      <p class="position">Research Scientist &middot; Google DeepMind</p>
+      <p class="bio">
+        I am a research scientist at Google DeepMind. I am interested in reinforcement learning and long horizon planning.
+      </p>
+      <nav class="links">
+        <a href="https://scholar.google.co.uk/citations?user=c646VbAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </nav>
+    </header>
+
+    <!-- ── Publications ── -->
+    <section>
+      <p class="section-label">Selected Publications</p>
+
+      <!-- 2022 -->
+      <div class="year-group">
+        <span class="year-label">2022</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://proceedings.mlr.press/v162/goyal22a.html" target="_blank" rel="noopener">
+                Retrieval-Augmented Reinforcement Learning
+              </a>
+            </p>
+            <p class="pub-authors">A. Goyal, A. Friesen, A. Banino, T. Weber, N. R. Ke, A. P. Badia, A. Guez, <strong>M. Mirza</strong>, K. Konyushkova, M. Valko, S. Osindero, T. Lillicrap, N. Heess, C. Blundell</p>
+            <p class="pub-venue">ICML 2022</p>
+          </div>
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://openreview.net/forum?id=SS8F6tFX3-" target="_blank" rel="noopener">
+                Evaluating Model-Based Planning and Planner Amortization for Continuous Control
+              </a>
+            </p>
+            <p class="pub-authors">A. Byravan, L. Hasenclever, P. Trochim, <strong>M. Mirza</strong>, A. D. Ialongo, Y. Tassa, J. T. Springenberg, A. Abdolmaleki, N. Heess, J. Merel, M. Riedmiller</p>
+            <p class="pub-venue">ICLR 2022</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- 2020 -->
+      <div class="year-group">
+        <span class="year-label">2020</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://arxiv.org/abs/2009.05524" target="_blank" rel="noopener">
+                Physically Embedded Planning Problems: New Challenges for Reinforcement Learning
+              </a>
+            </p>
+            <p class="pub-authors"><strong>M. Mirza</strong>, A. Jaegle, J. J. Hunt, A. Guez, S. Tunyasuvunakool, A. Muldal, T. Weber, P. Karkus, S. Racanière, L. Buesing, T. Lillicrap, N. Heess</p>
+            <p class="pub-venue">arXiv 2020</p>
+          </div>
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://arxiv.org/abs/2010.01298" target="_blank" rel="noopener">
+                Beyond Tabula-Rasa: a Modular Reinforcement Learning Approach for Physically Embedded 3D Sokoban
+              </a>
+            </p>
+            <p class="pub-authors">P. Karkus, <strong>M. Mirza</strong>, A. Guez, A. Jaegle, T. Lillicrap, L. Buesing, N. Heess, T. Weber</p>
+            <p class="pub-venue">arXiv 2020</p>
+          </div>
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://doi.org/10.1145/3422622" target="_blank" rel="noopener">
+                Generative Adversarial Networks
+              </a>
+            </p>
+            <p class="pub-authors">I. J. Goodfellow, J. Pouget-Abadie, <strong>M. Mirza</strong>, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, Y. Bengio</p>
+            <p class="pub-venue">Communications of the ACM, 63(11), 2020</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- 2019 -->
+      <div class="year-group">
+        <span class="year-label">2019</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="http://proceedings.mlr.press/v97/guez19a.html" target="_blank" rel="noopener">
+                An Investigation of Model-Free Planning
+              </a>
+            </p>
+            <p class="pub-authors">A. Guez, <strong>M. Mirza</strong>, K. Gregor, R. Kabra, S. Racanière, T. Weber, D. Raposo, A. Santoro, L. Orseau, T. Eccles, G. Wayne, D. Silver, T. Lillicrap</p>
+            <p class="pub-venue">ICML 2019</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- 2018 -->
+      <div class="year-group">
+        <span class="year-label">2018</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="http://arxiv.org/abs/1803.10760" target="_blank" rel="noopener">
+                Unsupervised Predictive Memory in a Goal-Directed Agent
+              </a>
+            </p>
+            <p class="pub-authors">G. Wayne, C.-C. Hung, D. Amos, <strong>M. Mirza</strong>, A. Ahuja, A. Grabska-Barwinska, J. Rae, P. Mirowski, J. Leibo, A. Santoro, M. Gemici, et al.</p>
+            <p class="pub-venue">arXiv 2018</p>
+          </div>
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://arxiv.org/abs/1810.06721" target="_blank" rel="noopener">
+                Optimizing Agent Behavior over Long Time Scales by Transporting Value
+              </a>
+            </p>
+            <p class="pub-authors">C.-C. Hung, T. Lillicrap, J. Abramson, Y. Wu, <strong>M. Mirza</strong>, F. Carnevale, A. Ahuja, G. Wayne</p>
+            <p class="pub-venue">arXiv 2018</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- 2016 -->
+      <div class="year-group">
+        <span class="year-label">2016</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://arxiv.org/abs/1602.01783" target="_blank" rel="noopener">
+                Asynchronous Methods for Deep Reinforcement Learning
+              </a>
+            </p>
+            <p class="pub-authors">V. Mnih, A. P. Badia, <strong>M. Mirza</strong>, A. Graves, T. Lillicrap, T. Harley, D. Silver, K. Kavukcuoglu</p>
+            <p class="pub-venue">ICML 2016</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- 2014 -->
+      <div class="year-group">
+        <span class="year-label">2014</span>
+        <div class="year-pubs">
+
+          <div class="pub">
+            <p class="pub-title">
+              <a href="https://arxiv.org/abs/1411.1784" target="_blank" rel="noopener">
+                Conditional Generative Adversarial Nets
+              </a>
+            </p>
+            <p class="pub-authors"><strong>M. Mirza</strong>, S. Osindero</p>
+            <p class="pub-venue">arXiv 2014</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pubs-divider"></div>
+
+      <!-- Full list pointer -->
+      <div class="year-group">
+        <span class="year-label">&nbsp;</span>
+        <div class="year-pubs">
+          <div class="pub">
+            <p class="pub-title" style="font-size:0.82rem; color: var(--ink-mid);">
+              For a complete list, see
+              <a href="https://scholar.google.co.uk/citations?user=c646VbAAAAAJ&hl=en" target="_blank" rel="noopener" style="color:var(--accent); border-bottom: 1px solid var(--rule); text-decoration:none;">Google Scholar</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      memimo.net
+    </footer>
+
+  </main>
+</body>
+</html>
